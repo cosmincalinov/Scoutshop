@@ -1,0 +1,106 @@
+html {
+    font-size: 18px;
+}
+
+#grid-pagina {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "prezentare prezentare prezentare prezentare"
+                         "utilizatori_online stat_date stat_date despre"
+                         "calendar calendar tabel tabel"
+                         "anunturi anunturi tabel tabel"
+                         "continut continut continut continut"
+}
+
+#grid-pagina>*{
+    border: 2px solid var(--culoare-deschisa);
+    padding: 1em;
+}
+
+#grid-pagina>figure {
+    margin: 0;
+}
+
+#welcome{
+    grid-area: prezentare;
+}
+
+#utilizatori_online{
+    grid-area: utilizatori_online;
+}
+
+#stat_date{
+    grid-area: stat_date;
+}
+
+#despre{
+    grid-area: despre;
+}
+
+#calendar{
+    grid-area: calendar;
+}
+
+#tabel{
+    grid-area: tabel;
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+#continut{
+    grid-area: continut;
+}
+
+.intro-oferte {
+    font-size: 1.5rem;
+}
+
+.farfurie {
+    width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    #grid-pagina {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "prezentare prezentare"
+                             "prezentare prezentare"
+                             "utilizatori_online stat_date"
+                             "stat_date despre"
+                             "calendar calendar" 
+                             "tabel tabel"
+                             "anunturi anunturi" 
+                             "tabel tabel"
+                             "continut continut" 
+                             "continut continut"
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    #grid-pagina {
+        display: block;
+    }
+    #sageata, #link-top{
+        transition: none;
+        transform: none;
+    }
+    #tabel {
+        overflow-x: scroll;
+    }
+}
+
+

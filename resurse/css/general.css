@@ -1,0 +1,96 @@
+#link-top {
+    position: fixed;
+    opacity: 0.5;
+    bottom:0.3em;
+    left:0.3em;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius: 50%;
+    border: 2px dashed white;
+    text-decoration: none;
+    color: var(--culoare-deschisa);
+  
+    line-height:2.5rem;
+    text-align:center;
+  
+    transform: rotateZ(0);
+    transition: opacity 0.5s linear, transform 0.5s linear;
+    box-shadow: var(--culoare-deschisa);
+    background: radial-gradient(white, grey);
+  }
+  
+  #sageata {
+    font-size: 2rem;
+    opacity: 0.5;
+    transform: rotateZ(0);
+    transition: opacity 0.5s linear, transform 0.5s linear;
+  }
+  
+  #link-top:hover {
+    opacity: 1;
+    transform: rotateZ(90deg);
+  }
+  
+  #link-top:hover>#sageata {
+    opacity: 1;
+    transform: rotateZ(-90deg);
+  }
+  
+  #tab-orar td, #tb-orar th{
+    border: 1px solid black;
+  }
+  
+  #tab-orar thead th:nth-child(odd) {
+    background-color: var(--culoare-deschisa);
+  }
+
+  #tab-orar tr:nth-of-type(odd) {
+    box-shadow: var(--culoare-margini) 1px 2px;
+  }
+
+  #tab-orar tr{
+    transition: all 1s linear;
+  }
+
+  #tab-orar tr:hover{
+    background-color: burlywood;
+    font-size: 1.2rem;
+  }
+
+  .container-iframe {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 50%;
+}
+.container-iframe iframe{
+    width: 100%;
+}
+
+.taburi-iframe{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.taburi-iframe>a{
+    display: block;
+    border: 4px solid var(--culoare-margini);
+    background-color: var(--culoare-deschisa);
+    /* margin-bottom: 0.4em; */
+    padding: 0.6em;
+    text-decoration: none;
+    border-radius: 0 0 10% 10%;
+    background: radial-gradient( var(--culoare-margini) 50%, var(--culoare-deschisa));
+    transition: all 2s linear;
+    text-shadow: white 2px 0 2px;
+    color: var(--culoare-inchisa);
+}
+
+.taburi-iframe>a:last-child{
+    margin-bottom: 0;
+}
+
+.taburi-iframe>a:hover {
+    background: radial-gradient( var(--culoare-margini) 70%, var(--culoare-deschisa));
+    background-color: aliceblue;
+  }
