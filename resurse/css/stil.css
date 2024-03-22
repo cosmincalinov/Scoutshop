@@ -13,11 +13,20 @@ body{
 }
 
 p{
-    background-color: var(--culoare-inchisa);
+    background-color: var(--culoare-deschisa);
 }
 
 h1{
     border:5px solid var(--culoare-deschisa);
+}
+
+truculenta-uniquifier {
+  font-family: "Truculenta", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 3px;
+  font-style: normal;
+  font-variation-settings:
+  "wdth" 100;
 }
 
 /* #link-top{

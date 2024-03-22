@@ -36,16 +36,24 @@
     transform: rotateZ(-90deg);
   }
   
-  #tab-orar td, #tb-orar th{
+  #tab-orar td{
     border: 1px solid black;
   }
-  
-  #tab-orar thead th:nth-child(odd) {
-    background-color: var(--culoare-deschisa);
+
+  #tb-orar th {
+    border: 3px solid black;
   }
+  
+  /* #tab-orar thead th:nth-child(odd) {
+    background-color: var(--culoare-deschisa);
+  } */
 
   #tab-orar tr:nth-of-type(odd) {
     box-shadow: var(--culoare-margini) 1px 2px;
+  }
+
+  #tab-orar tr:nth-of-type(even) {
+    box-shadow: var(--culoare-deschisa) 1px 2px;
   }
 
   #tab-orar tr{
@@ -53,8 +61,12 @@
   }
 
   #tab-orar tr:hover{
-    background-color: burlywood;
+    background-color: var(--culoare-text-selectat);
     font-size: 1.2rem;
+  }
+
+  #tab-orar th{
+    border: solid 3px var(--culoare-inchisa);
   }
 
   .container-iframe {
@@ -74,16 +86,20 @@
 
 .taburi-iframe>a{
     display: block;
-    border: 4px solid var(--culoare-margini);
+    width: 50px;
+    text-align: center;
+    border: 4px solid var(--culoare-deschisa);
     background-color: var(--culoare-deschisa);
     /* margin-bottom: 0.4em; */
     padding: 0.6em;
     text-decoration: none;
-    border-radius: 0 0 10% 10%;
-    background: radial-gradient( var(--culoare-margini) 50%, var(--culoare-deschisa));
-    transition: all 2s linear;
+    border-radius: 0 0 30% 30%;
+    /* background: radial-gradient( var(--culoare-margini) 50%, var(--culoare-deschisa)); */
+    box-shadow: inset 0px 5px 7px 5px var(--culoare-margini);
+    transition: box-shadow 1.5s linear;
     text-shadow: white 2px 0 2px;
     color: var(--culoare-inchisa);
+    text-emphasis-color: var(--culoare-inchisa);
 }
 
 .taburi-iframe>a:last-child{
@@ -91,6 +107,7 @@
 }
 
 .taburi-iframe>a:hover {
-    background: radial-gradient( var(--culoare-margini) 70%, var(--culoare-deschisa));
-    background-color: aliceblue;
-  }
+    /* background: radial-gradient(var(--culoare-margini) 70%, var(--culoare-deschisa)); */
+    box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
+    /* background-color: aliceblue; */
+}

@@ -32,23 +32,19 @@
         <!--Mathml-->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <style>
-            p{
-                color: #ffd400;
-            }
-        </style>
+        <script src="https://kit.fontawesome.com/62a7ff267e.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <header id="header">
+        <header>
             <h1>Scout Shop</h1>
+        </header>
             <nav>
-                <label id="iconita" for="ch-menu">
-                    <img src="resurse/imagini/hamburg.jpg" alt="menu">
-                </label>
+                <label id="iconita" for="ch-menu"></label>
                 <input id="ch-menu" type="checkbox">
-                <ul class = "meniu">
+                <ul class = "meniu">  
                     <li>Acasa
+                        <i class="fa-solid fa-house"></i>
                         <ul>
                             <li><a href="#welcome">Bine ati venit</a></li>
                             <li><a href="#articole noi">Despre noi</a></li>
@@ -59,7 +55,6 @@
                     <li>Info</li>
                 </ul>
             </nav>
-        </header>
         <main id="grid-pagina">
             <div id="tabel">
                 <table id="tab-orar">
@@ -105,7 +100,7 @@
                             <td>inchis</td>
                         </tr>
                         <tr>
-                            <td rowspan="2">Weekend</td>
+                            <td rowspan="2">Zile<br/>Weekend</td>
                             <td>Sambata</td>
                             <td>inchis</td>
                             <td>inchis</td>
@@ -210,12 +205,12 @@
         </main>
         <footer id="footer">
             <a href="https://shop.scout.ro/" target="_blank">Magazin original</a>
-            <a href="resurse/imagini/Gear.jpeg" download>Descarcati</a>
+            <i class="fa-solid fa-wand-magic-sparkles"></i><a href="resurse/imagini/Gear.jpeg" download>Descarcati</a>
             <a href="#" tilte="inapoi sus" id="link-top"><div title="Inapoi Sus" id="sageata">&#8593;</div></a>
             
             <address>
                 Strada Noua, Nr34<br>
-                <a href="mailto:scout@oncr.ro">Mail Contact</a>
+                <i class="fa-solid fa-envelope fa-bounce" style="--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;"></i><a href="mailto:scout@oncr.ro">Mail Contact</a>
                 <a href="tel:+0707070707">Telefon</a>
                 <a href="https://wa.me/+07123456687">What's App</a>
                 <p><small>Copyright &copy;</small></p>      
