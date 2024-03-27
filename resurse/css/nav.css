@@ -15,6 +15,9 @@ nav {
 
 .meniu {
     display: flex;
+    /* flex-direction: row;
+    justify-content: space-around;
+    align-items: center; */
 }
 
 .meniu, .meniu ul{
@@ -31,7 +34,15 @@ nav {
     height: var(--inaltime-meniu);
     text-align: center;
     box-sizing: border-box;
+    overflow: hidden;
+}
 
+.meniu li div{
+    transition: box-shadow 1.5s linear;
+}
+
+.meniu li div:hover{
+    box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
 }
 
 .meniu li div, .meniu li a {
@@ -43,6 +54,7 @@ nav {
     color: var(--culoare-text);
     text-decoration: none;
     box-sizing: border-box;
+    transition: all 1s linear;
 }
 
 /* submeniu */
@@ -52,8 +64,13 @@ nav {
 }
 
 .meniu li div, .meniu li:hover a {
-    background-color: var(--culoare-inchisa);
-    color: var(--culoare-text-selectat);
+    background-color: var(--culoare-deschisa);
+    color: var(--culoare-text-inchisa);
+}
+
+.meniu li:hover>div, .meniu li:hover>a {
+    background-color: var(--culoare-deschisa);
+    color: var(--culoare-text-inchisa);
 }
 
 
@@ -64,6 +81,28 @@ nav {
     opacity: 0;
     transform: scaleY(0);
     transform-origin: center top;
+    box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
+}
+
+.meniu ul li a::before {
+    content: "\2192"; 
+    margin: 0;
+    padding: 0; 
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    position: absolute; 
+    left: 0;
+}
+
+.meniu ul li:hover a::before {
+    opacity: 1; 
+    transform: translateX(0);
+}
+
+.meniu ul li a {
+    overflow: hidden;
+    position: relative;
 }
 
 @keyframes animatie_submeniu {

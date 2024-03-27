@@ -7,9 +7,13 @@ body{
     --culoare-text-selectat: #f7f0f0;
     --culoare-margini: #ff7518;
     padding: 100px;
+    padding-bottom: 20px;
     padding-left: var(--dim-spatiere);
     padding-right: var(--dim-spatiere);
     background-color: var(--culoare-fundal);
+      font-family: "Roboto", sans-serif;
+      font-weight: 100;
+      font-style: normal;
 }
 
 p{
@@ -20,13 +24,17 @@ h1{
     border:5px solid var(--culoare-deschisa);
 }
 
-truculenta-uniquifier {
+.truculenta-uniquifier {
   font-family: "Truculenta", sans-serif;
   font-optical-sizing: auto;
   font-weight: 3px;
   font-style: normal;
   font-variation-settings:
   "wdth" 100;
+}
+
+#footer{
+  border: 70px;
 }
 
 /* #link-top{

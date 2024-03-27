@@ -111,3 +111,11 @@
     box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
     /* background-color: aliceblue; */
 }
+
+#banner{
+  display: none;
+}
+
+#watermark {
+  display: none;
+}

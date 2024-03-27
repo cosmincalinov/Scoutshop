@@ -57,11 +57,10 @@ nav ul.meniu>li ul{
     z-index:200;
 }
 nav ul.meniu>li:hover>ul{
-    
     z-index:200;
     animation:none;
+    box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
 }
-
 
 /* pentru fiecare element din submeniu generam un triunghiulet alb inaintea lui*/
 nav ul.meniu>li li a:before{
@@ -73,10 +72,11 @@ nav ul.meniu>li li a:before{
 @keyframes aparitie_meniu_p{
     0%{
         opacity:0;
-        
+        transform:scale(0,0);
     } 
 	100%{
     	opacity:1;
+        transform:scaleX(1,1);
     }
 }
 
