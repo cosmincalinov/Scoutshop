@@ -16,6 +16,7 @@ nav {
 .meniu {
   display: flex;
 }
+
 .meniu li {
   border: 1px solid var(--culoare-inchisa);
   width: var(--latime-buton);
@@ -23,6 +24,7 @@ nav {
   text-align: center;
   box-sizing: border-box;
 }
+
 .meniu li div, .meniu li a {
   display: block;
   width: 100%;
@@ -67,5 +69,4 @@ nav {
     transform: scaleY(1);
   }
 }
-
 /*# sourceMappingURL=nav-test.css.map */

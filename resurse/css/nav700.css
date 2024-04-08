@@ -20,53 +20,62 @@ ul.meniu{
     display: block;
     z-index: 2;
     position: relative;
-
+    transform-origin: top left;
     animation-name: aparitie_meniu_p;
     animation-iteration-count:1;
     animation-duration:0.7s;
     animation-fill-mode:forwards;
     animation-timing-function:linear;
 }
-#ch-menu:checked+ul.meniu>li>div,#ch-menu:checked+ul.meniu>li>a{
-    
-    z-index: 2;
-    position: relative;
-    transform-origin: 50% 50%;
+/* #ch-menu:checked+ul.meniu>li>div,#ch-menu:checked+ul.meniu>li>a{ */
+ul.meniu>li ul{
+    /* z-index: 2; */
+    z-index: 200;
+    position: absolute;
+    transform-origin: top center;
     animation-name: aparitie_meniu_p_btn;
     animation-iteration-count:1;
     animation-duration:0.7s;
     animation-fill-mode:forwards;
     animation-timing-function:linear;
+    opacity: 1 !important;
+    width:100%;
+    /* transition: opacity 0.5s ease, transform 0.5s ease; */
+    /* display: block; */
 }
 /*optiunile se intind pe toata latimea containerului*/
 nav ul.meniu li{
     width:100%;
 }
 
+#acasa {
+    display: block !important;
+}
+
 /*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
-nav ul.meniu>li ul{
+/* nav ul.meniu>li ul{
     position:absolute;
     width:100%;
     z-index:200;
     transform:scale(1,1) !important;
     opacity: 1 !important;
-}
+} */
 
-#ch-menu:checked+ul.meniu>li ul>*{
+/* #ch-menu:checked+ul.meniu>li ul>*{
     position:relative;
     z-index:200;
-}
-nav ul.meniu>li:hover>ul{
-    z-index:200;
-    animation:none;
+} */
+nav ul.meniu>li:hover ul li a:hover{
+    /* z-index:200; */
+    /* animation:none; */
     box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
 }
 
 /* pentru fiecare element din submeniu generam un triunghiulet alb inaintea lui*/
 nav ul.meniu>li li a:before{
-    content:" \25B7\00A0	";
+    /* content:" \25B7\00A0	"; */
+    content: none;
     color:white;
-
 }
 
 @keyframes aparitie_meniu_p{
@@ -82,7 +91,7 @@ nav ul.meniu>li li a:before{
 
 @keyframes aparitie_meniu_p_btn{
     0%{
-        transform:scale(0,0);
+        transform:scale(1,0);
     } 
 	100%{
     	transform:scale(1,1);

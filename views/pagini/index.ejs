@@ -11,6 +11,29 @@
     <body>
         <%- include("../fragmente/header.ejs") %>
         <main id="grid-pagina">
+            <section id="galerie-statica">            
+                <h2>Galerie</h2>            
+                <div id="grid-galerie">  
+                    <% 
+                        vLuni = ["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie","august","septembrie","octombire","noiembrie","decembrie"];
+                        var d = new Date();
+                        var lunaCurenta = vLuni[d.getMonth()];
+                        for(let imag of locals.imagini) { 
+                            if(imag?.luni?.includes(lunaCurenta)) {
+                            %>              
+                    <figure>
+                    <picture>
+                        <picture>
+                            <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
+                            <img src="<%= imag.fisier %>" alt="prajituri"/>
+                            
+                        </picture>                
+                        <figcaption><%= imag.descriere%></figcaption>
+                    </figure>
+                    <% } %>
+                    <% } %>
+                </div>
+            </section>
             <div id="tabel">
                 <table id="tab-orar">
                     <thead>
@@ -73,6 +96,7 @@
             </div>
             <section id="welcome">
                 <h2>Bine ati venit</h2>
+                <p>Ip: <%- locals.ip %></p>
                 <br>
                 <a href="pagina.html">Alta pagina</a>
                 <a href="http://www.google.com">Alta pagina</a>
