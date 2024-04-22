@@ -5,11 +5,7 @@ nav {
   background-color: var(--culoare-deschisa);
 }
 
-#hamburger, #ch-menu {
-  display: none;
-}
-
-#acasa-mediu {
+#hamburger, #ch-menu, #acasa-mediu {
   display: none;
 }
 
@@ -66,4 +62,4 @@ nav {
     opacity: 1;
     transform: scaleY(1);
   }
-}/*# sourceMappingURL=nav.css.map */
+}

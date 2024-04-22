@@ -3,12 +3,27 @@ const fs = require('fs'); // verifica, poate sa acceseze fisierul
 const path = require('path');// se uita str la cai
 const sharp = require('sharp');
 const sass = require('sass');
-// const ejs=require('ejs');
+const ejs=require('ejs');
+const Client = require("pg").Client;
 
 //pt task video la introducere in html exemplul de la primul curs,  exemplul de tag ul track
 //pt stilizare in curs 2 la stilizare webvtt
 // :visited, :active, :link, :before, :after
 //pt link uri ext a[href^="http"]::before
+var client= new Client({database:"ScoutShop",
+        user:"cosmin",
+        password:"cosmin",
+        host:"localhost",
+        port:5432});
+client.connect();
+
+// client.query("select * from prajituri", function(err,rez){
+//     console.log(rez);
+// });
+
+client.query("select * from unnest(enum_range(null::categ_prajitura))",function(err,rez){
+    console.log(rez);
+})
 
 obGlobal ={
     obErori: null,
@@ -48,6 +63,37 @@ app.use("/node_modules", express.static(__dirname+"/node_modules"));
 app.get(["/","/home","/index"], function(req, res) {
     res.render("pagini/index", {ip: req.ip, imagini: obGlobal.obImagini.imagini});
 });
+
+app.get("/produse", function(req,res) {
+    var conditieQuery="";
+    if (req.query.tip) {
+        conditieQuery = ` where tip_produs = '${req.query.tip}'`;
+    }
+    client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err,rezOptiuni) {
+        client.query(`select * from prajituri ${conditieQuery}`, function(err,rez){
+            if(err){
+                console.log(err);
+                afisareEroare(res,2);
+            } else {
+                res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows});
+            }
+        })
+    })
+});
+
+
+app.get("/produs/:id", function(req,res) {
+    client.query("select * from articole where id=${req.params.id}`", function(err,rez){
+        if(err){
+            console.log(err);
+            afisareEroare(res,2);
+        } else {
+            res.render("pagini/produs", {prod: rez.rows[0]});
+        }
+    });
+});
+
+
 
 //trimiterea unui mesaj fix
 app.get("/cerere", function(req, res) {
@@ -222,7 +268,7 @@ function initImagini(){
 }
     initImagini();
 
-    
+
 
 
 

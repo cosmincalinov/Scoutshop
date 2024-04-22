@@ -19,18 +19,17 @@
                         var d = new Date();
                         var lunaCurenta = vLuni[d.getMonth()];
                         for(let imag of locals.imagini) { 
-                            if(imag?.luni?.includes(lunaCurenta)) {
-                            %>              
-                    <figure>
-                    <picture>
-                        <picture>
-                            <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                            <img src="<%= imag.fisier %>" alt="prajituri"/>
-                            
-                        </picture>                
-                        <figcaption><%= imag.descriere%></figcaption>
-                    </figure>
-                    <% } %>
+                            if(imag?.luni?.includes(lunaCurenta)) { %>              
+                                <figure>
+                                <picture>
+                                    <picture>
+                                        <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
+                                        <img src="<%= imag.fisier %>" alt="prajituri"/>
+                                        
+                                    </picture>                
+                                    <figcaption><%= imag.descriere%></figcaption>
+                                </figure>
+                        <% } %>
                     <% } %>
                 </div>
             </section>
@@ -116,6 +115,16 @@
                 Explicabo qui inventore omnis laboriosam magnam saepe. Molestiae saepe maiores illum! Vel eligendi error ipsum vitae dolor. Illo provident hic reiciendis quod neque, consequatur culpa fugit odio facere, dolor eligendi.
                 Corrupti dolor nobis iste harum dicta consequatur accusamus aspernatur possimus deleniti mollitia atque doloremque, numquam ipsum. Quos provident molestiae cumque alias numquam aliquid eveniet, sit iste delectus excepturi, nihil adipisci.
             </p>
+            <article>
+                    <h4 class="newstitle">Ana își face promisiunea!</h4>
+                    <video poster="/resurse/video/Promisiune cercetasi Ana Spioana.mp4" preload="metadata" controls>
+                        <source src="/resurse/video/Promisiune cercetasi Ana Spioana.mp4" type="video/mp4">
+                        <source src="/resurse/video/Promisiune cercetasi Ana Spioana.mov" type="video/mov">
+                        <track src="/resurse/subtitrari/romana.vtt" kind="captions" srclang="ro" label="romana" default/>
+                        <track src="/resurse/subtitrari/engleza.vtt" kind="captions" srclang="en" label="english"/>
+                        Browserul dvs nu poate afisa videouri. Incercati pe alt browser.
+                    </video>
+            </article>
             </section>
             <section id="despre">
                 <h2>Articole noi</h2>

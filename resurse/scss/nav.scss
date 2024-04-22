@@ -5,11 +5,7 @@ nav {
     background-color: var(--culoare-deschisa);
 }
 
-#hamburger, #ch-menu {
-    display: none;
-}
-
-#acasa-mediu {
+#hamburger, #ch-menu, #acasa-mediu {
     display: none;
 }
 
@@ -39,13 +35,8 @@ nav {
     list-style: none;
     padding: 0;
     margin: 0;
-
     background-color: var(--culoare-deschisa);
 }
-
-
-
-
 
 /* submeniu */
 .meniu ul{
