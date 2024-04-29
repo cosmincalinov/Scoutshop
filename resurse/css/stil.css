@@ -17,6 +17,10 @@ body{
     --transparent: rgba(0,0,0,0);
 }
 
+body.dark {
+  --culoare-fundal: black;
+}
+
 p{
     background-color: var(--culoare-deschisa);
     padding: 0.2rem 0.5rem;
