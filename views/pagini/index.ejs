@@ -15,7 +15,7 @@
                 <h2>Galerie</h2>            
                 <div id="grid-galerie">  
                     <% 
-                        vLuni = ["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie","august","septembrie","octombire","noiembrie","decembrie"];
+                        vLuni = ["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie", "august", "septembrie", "octombire", "noiembrie", "decembrie"];
                         var d = new Date();
                         var lunaCurenta = vLuni[d.getMonth()];
                         for(let imag of locals.imagini) { 
@@ -95,6 +95,12 @@
             </div>
             <section id="welcome">
                 <h2>Bine ati venit</h2>
+                <%- include("../fragmente/formular-login.ejs", 
+                    {
+                        utilizator:locals.utilizator,
+                        mesajLogin: locals.mesajLogin
+                    }) 
+                %>
                 <p>Ip: <%- locals.ip %></p>
                 <br>
                 <a href="pagina.html">Alta pagina</a>
