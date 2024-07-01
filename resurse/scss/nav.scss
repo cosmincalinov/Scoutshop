@@ -3,6 +3,7 @@ nav {
     --latime-buton: 150px;
     height: var(--inaltime-meniu);
     background-color: var(--culoare-deschisa);
+    margin-bottom: 2em;
 }
 
 #hamburger, #ch-menu, #acasa-mediu {
@@ -45,10 +46,17 @@ nav {
 }
 
 .meniu li div, .meniu li:hover a {
-    background-color: var(--culoare-inchisa);
+    background-color: var(--culoare-deschisa);
     color: var(--culoare-text-selectat);
 }
 
+.meniu li div{
+    transition: box-shadow 1.5s linear;
+}
+
+.meniu li div:hover{
+    box-shadow: inset 0px 5px 20px 5px var(--culoare-margini);
+}
 
 .meniu li:hover>ul{
     display: block;
@@ -65,3 +73,23 @@ nav {
         transform: scaleY(1);
     }
 }
+
+.meniu ul li a::before {
+    content: "\2192"; 
+    margin: 0;
+    padding: 0; 
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    position: absolute; 
+    left: 0; 
+  }
+  
+  .meniu ul li:hover a::before {
+    opacity: 1; 
+    transform: translateX(0);
+  }
+
+  .meniu ul li a{
+    overflow: hidden;
+  }

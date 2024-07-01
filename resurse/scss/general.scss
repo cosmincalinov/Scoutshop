@@ -1,3 +1,7 @@
+$yellow: var(--culoare-deschisa);
+$orange: var(--culoare-margini);
+$white: var(--culoare-text-selectat);
+
 #link-top {
     position: fixed;
     opacity: 0.5;
@@ -17,12 +21,14 @@
     transition: opacity 0.5s linear, transform 0.5s linear;
     box-shadow: var(--culoare-deschisa);
     background: radial-gradient(white, grey);
+    box-sizing: content-box;
   }
 
   @mixin extLink{
-    a[href^="http"]:not(.taburi-iframe a)::before {
+    a[href^="http"]:not(.taburi-iframe a)::after {
         content: "\2BB3";
         font-size: 1.5rem;
+
     }
     a[href^="http"]:not(.taburi-iframe a):hover::before {
         color: var(--culoare-inchisa);
@@ -98,7 +104,6 @@
 
 .taburi-iframe>a{
     display: block;
-    width: 50px;
     text-align: center;
     border: 4px solid var(--culoare-deschisa);
     background-color: var(--culoare-deschisa);
@@ -108,7 +113,7 @@
     border-radius: 0 0 30% 30%;
     /* background: radial-gradient( var(--culoare-margini) 50%, var(--culoare-deschisa)); */
     box-shadow: inset 0px 5px 7px 5px var(--culoare-margini);
-    transition: box-shadow 1.5s linear;
+    // transition: box-shadow 1.5s linear;
     text-shadow: white 2px 0 2px;
     color: var(--culoare-inchisa);
     text-emphasis-color: var(--culoare-inchisa);
@@ -157,4 +162,123 @@ main a, footer a:not(#link-top) {
 
 main a:hover, footer a:hover:not(#link-top) {
   background-size: 100%;
+}
+
+.bun_venit {
+  display: inline-block;
+  transform: rotate(-25deg);
+}
+
+#reflexie {
+  transform: scaleX(-1) rotate(-25deg);
+  &:hover {
+    color: var(--culoare-deschisa);
+  }
+}
+
+#wrapper {
+  h2 {
+    transition: all 1.5s linear;
+  }
+  &:hover  h2 {
+    color: var(--culoare-deschisa);
+  }
+  margin-bottom: 2em;
+  padding-top: 2em;
+}
+
+hr {
+  border: none;
+  text-align: center;
+  border-top: 2px solid var(--culoare-margini); 
+  position: relative;
+  height: 10px; 
+  margin: 20px 0; 
+  display: inline-block;
+  width: 100%;
+  
+
+  &::before, 
+  &::after {
+    content: "*"; 
+    font-size: 20px; 
+    color: var(--culoare-margini); 
+    position: relative;
+    top: -9px;
+    color: black;
+  }
+
+  &::before {
+    left: 50%;
+    margin-left: 0; 
+  }
+
+  &::after {
+    right: 50%;
+    margin-right: 0;
+  }
+}
+
+#banner {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+  background-color: $orange;
+  border: 2px solid $yellow;
+  color: black;
+  font-size: 1em;
+  transition: all 5s ease-in-out;
+  animation: cookiebanner_animation 3s forwards;
+  display: none;
+}
+
+#okcookie {
+  margin-left: 1.5em;
+}
+
+@keyframes cookiebanner_animation {
+  0% {
+      bottom: -100%;
+      background-color: $yellow;
+      border-color: $orange;
+  }
+  50% {
+      bottom: 20px;
+      background-color: $orange;
+      border-color: black;
+  }
+  100% {
+      bottom: 0;
+      background-color: $yellow;
+      border-color: $orange;
+  }
+}
+
+body.dark {
+    --culoare-fundal: #5B6255;
+    --culoare-inchisa: #f3f7f0;
+    --culoare-deschisa: #481d24;
+    --culoare-text: white;
+    --culoare-text-selectat: #8963ba;
+    --culoare-margini: #2b50aa;
+}
+
+body.alter {
+    --culoare-fundal: #ceb992;
+    --culoare-inchisa: #020887;
+    --culoare-deschisa: #f64740;
+    --culoare-text: #3d3b30;
+    --culoare-text-selectat: #3f826d;
+    --culoare-margini: #6d98ba;
+}
+
+.prodcard {
+  width: 100%;
+  border: 3px dashed var(--culoare-margini);
+  img {
+    width: 80%;
+  }
 }

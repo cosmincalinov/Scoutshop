@@ -1,0 +1,137 @@
+$yellow: var(--culoare-deschisa);
+$orange: var(--culoare-margini);
+$white: var(--culoare-text-selectat);
+
+.prodfig img {
+    width: 50%;
+    height: auto;
+}
+
+.prods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    p {
+        margin: 0.2em;
+    }
+    .product {
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5rem;
+        margin-bottom: 3rem; 
+        overflow: hidden;
+        position: relative;
+        h3 {
+            color: var(--culoare-inchisa);
+            text-align: center;
+            margin-top: 0;
+            padding: 0.5rem 0.1rem;
+        }
+        a {
+            color: $yellow;
+        }
+        figure {
+            text-align: center;
+            img {
+                border: 1px solid black;
+            }
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // align-items: center;
+        }
+        .prodinfo {
+            display: flex;
+            background-color: var(--culoare-inchisa);
+            margin-bottom: 0.5rem;
+            p {
+                width: 30%;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+
+.select-cart {
+    display: inline-block;
+    background-color: var(--culoare-fundal);
+    width: 50%;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid transparent;
+    &:hover {
+        background-color: $orange;
+        border: 1px solid var(--culoare-inchisa);
+    }
+}
+
+.input-pair {
+    display: block;
+    margin-bottom: var(--txtpadding);
+    border-radius: 50%;
+}
+
+.radio-pair {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.calcdiv {
+    position: fixed;
+    text-align: center;
+    top: 5rem;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(var(--culoare-fundal), 0.7);
+    p {
+        color: $white;
+        span {
+            color: $orange;
+            font-weight: bold;
+        }
+    }
+}
+
+.row {
+    margin-bottom: 1.5em;
+}
+
+.form-select {
+    width: 25%;
+    background-color: $white;
+    color: $yellow;
+}
+
+.form-control, #name-inp-label {
+    width: 50%;
+    line-height: 1em;
+}
+
+.inp-round {
+    border-radius: 0.5em;
+    border: 1px solid transparent;
+}
+
+.form-range {
+    width: 50%;
+    height: 0.75em;
+}
+
+textarea {
+    line-height: 2em;
+    height: 2em;
+}
+
+@media screen and (max-width: 820px) {
+    .prods-grid {
+        display: block;
+    }
+}

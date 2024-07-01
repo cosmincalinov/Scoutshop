@@ -1,0 +1,35 @@
+CREATE TYPE categ_articol AS ENUM('imbracaminte', 'accesoriu');
+CREATE TYPE grupa_de_varsta AS ENUM('castorasi', 'lupisori', 'temerari','exploratori','seniori','lideri');
+
+CREATE TABLE IF NOT EXISTS articol (
+   id serial PRIMARY KEY,
+   nume VARCHAR(50) UNIQUE NOT NULL,
+   descriere TEXT,
+   pret NUMERIC(8,2) NOT NULL,   
+   greutate INT NOT NULL CHECK (greutate>=0),
+   volum INT NOT NULL CHECK (volum>=0),
+   categorie categ_articol DEFAULT 'accesoriu',
+   materiale VARCHAR [],
+   grupa grupa_de_varsta DEFAULT 'temerari',
+   personalizabil BOOLEAN NOT NULL DEFAULT FALSE,
+   imagine VARCHAR(300),
+   data_adaugare TIMESTAMP DEFAULT current_timestamp
+);
+
+insert into articol (nume,descriere,pret,greutate,volum,categorie,materiale,grupa,personalizabil,imagine)
+values
+	('Busola','Pentru cand te pierzi in padure.',29,400,75,'accesoriu', ARRAY['plastic','sticla','magnet'],'temerari',FALSE,'busola.jpg'),
+	('Camasa','Cămașa oficială a Cercetașilor României',108,350,1000,'imbracaminte', ARRAY ['bumbac','lana'],'lupisori',TRUE,'camasa.jpg'),
+	('Esarfa','Esarfa oficiala a cercetasilor Romaniei',30,100,200,'imbracaminte',ARRAY['bumbac'],'castorasi',TRUE,'esarfa.jpg'),
+	('Ecuson','Ecusonul oficial al cercetasilor Romaniei.',8,10,25,'accesoriu',ARRAY['tesatura','bumbac','poliester'],'lupisori',TRUE,'ecuson.jpg'),
+	('Fluier','Pentru cand vrei ajutor.',30,100,15,'accesoriu',ARRAY['plastic','fier'],'castorasi',FALSE,'fluier.jpeg'),
+	('Trusa','Pentru cei raniti.',31,200,200,'accesoriu',ARRAY['plastic','aluminiu','vata','fier'],'seniori',FALSE,'trusa.jpg'),
+	('Briceag','Atentie!Taie!',172,150,100,'accesoriu',ARRAY['plastic','fier'],'lideri','FALSE','briceag.webp'),
+	('Cana','Pentru cei setosi.',33,200,300,'accesoriu',ARRAY['aluminiu','plastic'],'temerari',TRUE,'cana.jpg'),
+	('Fierbator','Atunci cand ai nevoie sa faci taitei in camp.',74,500,250,'accesoriu',ARRAY['aluminiu','fier'],'temerari',FALSE,'fierbator.webp'),
+	('Tricou','Cel mai frumos tricou cercetasesc.',38,150,150,'imbracaminte',ARRAY['bumbac','poliester'],'lideri',TRUE,'tricou.webp'),
+	('Hanorac','Cand e frig in cort.',105,300,250,'imbracaminte', ARRAY['poliester','plastic','aluminiu'],'exploratori',TRUE,'hanorac.png'),
+	('Bidon','Cand liderul a uitat sa cumpere apa.',30,88,1000,'accesoriu',ARRAY['aluminiu','plastic'],'temerari',FALSE,'bidon.jpg'),
+	('Pantaloni','Pentru momentele in care vrei sa nu te piste tantarii in drumetie.',135,310,1000,'imbracaminte',ARRAY['poliester','bumbac'],'seniori',FALSE,'pantaloni.jpg'),
+	('Frontala','Cand vrei la baie in camp, dar e noapte.',42,50,50,'accesoriu',ARRAY['plastic','tesatura','elastic'],'temerari',FALSE,'frontala.jpeg'),
+	('Palarie','Pentru campurile de vara, mai ales pentru cei cheliosi.',300,30,200,'imbracaminte',ARRAY['bumbac','tesatura'],'castorasi',FALSE,'palarie.jpg');

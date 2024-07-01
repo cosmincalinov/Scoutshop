@@ -1,5 +1,4 @@
 
-
 //setCookie("a",10, 1000)
 function setCookie(nume, val, timpExpirare){//timpExpirare in milisecunde
     d=new Date();
@@ -16,18 +15,29 @@ function getCookie(nume){
     return null;
 }
 
+function getAllCookies() {
+    return document.cookie.split(';').map(cookie => cookie.trim().split('=')[0]);
+}
+
 function deleteCookie(nume){
     console.log(`${nume}; expires=${(new Date()).toUTCString()}`)
     document.cookie=`${nume}=0; expires=${(new Date()).toUTCString()}`;
 }
 
+function deleteAllCookies() {
+    const cookies = getAllCookies();
+    cookies.forEach(cookie => deleteCookie(cookie));
+}
 
 window.addEventListener("load", function(){
+    const banner = document.getElementById("banner");
+    banner.style.display = "block";
+
     if (getCookie("acceptat_banner")){
         document.getElementById("banner").style.display="none";
     }
 
-    this.document.getElementById("ok_cookies").onclick=function(){
+    this.document.getElementById("okcookie").onclick=function(){
         setCookie("acceptat_banner",true,60000);
         document.getElementById("banner").style.display="none"
     }

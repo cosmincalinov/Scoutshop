@@ -15,16 +15,15 @@
                 <h2>Galerie</h2>            
                 <div id="grid-galerie">  
                     <% 
-                        vLuni = ["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie", "august", "septembrie", "octombire", "noiembrie", "decembrie"];
+                        vLuni = ["ianuarie", "februarie", "martie", "aprilie","mai","iunie", "iulie", "august", "septembrie", "octombire", "noiembrie", "decembrie"];
                         var d = new Date();
                         var lunaCurenta = vLuni[d.getMonth()];
-                        for(let imag of locals.imagini) { 
+                        for(let imag of locals.imagini) {
                             if(imag?.luni?.includes(lunaCurenta)) { %>              
                                 <figure>
-                                <picture>
                                     <picture>
                                         <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                                        <img src="<%= imag.fisier %>" alt="prajituri"/>
+                                        <img src="<%= imag.fisier %>" alt="cercetasi"/>
                                         
                                     </picture>                
                                     <figcaption><%= imag.descriere%></figcaption>
@@ -94,14 +93,21 @@
                 </table>
             </div>
             <section id="welcome">
-                <h2>Bine ati venit</h2>
+            <div id="wrapper">
+                <h2 class="bun_venit">Bine ati venit </h2>
+                <h2 class="bun_venit" id="reflexie">Bine ati venit</h2>
+            </div>
                 <%- include("../fragmente/formular-login.ejs", 
                     {
                         utilizator:locals.utilizator,
                         mesajLogin: locals.mesajLogin
                     }) 
                 %>
+                <%- include("../fragmente/locatie.ejs") %>
+                <%- include("../fragmente/ora-server-client.ejs") %>
+                <div class = "container-calendar"><%- include("../fragmente/evenimente.ejs") %></div>
                 <p>Ip: <%- locals.ip %></p>
+                <%-// include("../fragmente/useri-online.ejs") %>
                 <br>
                 <a href="pagina.html">Alta pagina</a>
                 <a href="http://www.google.com">Alta pagina</a>
@@ -117,9 +123,16 @@
                 <figcaption>Logo</figcaption>
             </figure>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nihil tempore omnis aliquid eveniet earum quasi, doloremque debitis repellat odio consequuntur libero, eaque molestias placeat laborum corporis et, sunt perferendis.
-                Explicabo qui inventore omnis laboriosam magnam saepe. Molestiae saepe maiores illum! Vel eligendi error ipsum vitae dolor. Illo provident hic reiciendis quod neque, consequatur culpa fugit odio facere, dolor eligendi.
-                Corrupti dolor nobis iste harum dicta consequatur accusamus aspernatur possimus deleniti mollitia atque doloremque, numquam ipsum. Quos provident molestiae cumque alias numquam aliquid eveniet, sit iste delectus excepturi, nihil adipisci.
+                Te așteptăm în showroom pentru a proba/testa produsele noastre. Dacă achiziționezi prin internet și ai nevoie de altă mărime, îți trimitem la schimb exact ce ți se potrivește!
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <br>
+                Promotie!
+                <mn>1</mn>
+                <mo>+</mo>
+                <mn>1</mn>
+                <mo>=</mo>
+                <mn>1</mn>
+</math>
             </p>
             <article>
                     <h4 class="newstitle">Ana își face promisiunea!</h4>
@@ -140,41 +153,61 @@
                         <b>Cercetășia</b> este locul în care ești ascultat, în care nu există idei greșite, 
                         în care imaginația și creativitatea sunt cultivate la fiecare pas. 
                         Aici vei găsi oameni care să te accepte, să te înțeleagă și care să te sprijine. 
-                        Vei face parte dintr-un colectiv unic și frumos.
-
-                        Cercetășia scoate tot ce este mai bun din membrii organizației sale prin educație 
-                        non-formală. Activitățile și jocurile sunt menite să te ajute să te descoperi pe 
-                        tine ca persoană: care sunt cele mai importante valori ale tale, care sunt 
-                        punctele tale forte și ce poți face cu aceste <ins>abilități</ins>, să îți dai seama ce îți 
-                        dorești cu adevărat și cum să obții acel ceva. Vei avea <strong>sprijinul</strong> adulților și al 
-                        celorlalți membri pe tot parcursul călătoriei tale și, cel mai important, nu te va 
-                        judeca nimeni. Cercetășia este un spațiu sigur pentru a face <s>greșeli</s>. 
-                    </p>
+                        Vei face parte dintr-un colectiv unic și frumos.</p>
+                        <hr>
+                        <% for(let prod of locals.prods) { %>
+                            <div class="prod card">
+                                <figure>
+                                    <img src="/resurse/imagini/produse/<%- prod.imagine %>" class="prod card-img" alt="imagine <%- prod.nume %>">
+                                </figure>
+                                
+                                <div class="prod card-body">
+                                    <h5 class="prod card-title"><%- prod.nume %></h5>
+                                    <p class="prod card-text">
+                                        Pret: <span class="genre"><%- prod.pret %></span> |
+                                        Grupa varsta: <span class="theme"><%- prod.grupa %></span> 
+                                    </p>
+                                    <a href="/produs/<%- prod.id %>" class="btn btn-primary">Vezi produsul</a>
+                                </div>
+                            </div>
+                        <% } %>
                 </section>
             </section>
             <section id="utilizatori_online">
                 <h3>Utilizatori online</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quidem. Voluptate alias omnis, in obcaecati recusandae assumenda. Libero incidunt quos debitis laboriosam! Odio vero maxime, quaerat temporibus tenetur pariatur molestias.
+                    De atunci și până acum am reușit să elaborăm mai multe astfel de cursuri online, pe care vrem să vi le prezentăm tuturor ca și oportunități de a vă reaminti câteva dintre elementele învățate în stagii.
+                    Știm că o parte dintre voi le-ați descoperit deja și ne bucurăm că ați fost proactivi și le-ați parcurs. Ne-ar plăcea foarte mult să știm și cum a fost această experiență.
+                </p>
+                <p>
+                    Cercetășia scoate tot ce este mai bun din membrii organizației sale prin educație 
+                    non-formală. Activitățile și jocurile sunt menite să te ajute să te descoperi pe 
+                    tine ca persoană: care sunt cele mai importante valori ale tale, care sunt 
+                    punctele tale forte și ce poți face cu aceste <ins>abilități</ins>, să îți dai seama ce îți 
+                    dorești cu adevărat și cum să obții acel ceva. Vei avea <strong>sprijinul</strong> adulților și al 
+                    celorlalți membri pe tot parcursul călătoriei tale și, cel mai important, nu te va 
+                    judeca nimeni. Cercetășia este un spațiu sigur pentru a face <s>greșeli</s>. 
                 </p>
             </section>
 
             <section id="stat_date">
                 <h3>Date despre utilizator si statistici</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quidem. Voluptate alias omnis, in obcaecati recusandae assumenda.
+                    Cercetaşul este curajos şi încrezător în puterile lui, vioi şi plin de însufleţire.
+                    Cercetaşul iubeşte învăţătura şi la rândul său îi învaţă şi pe alţii.
+                    Cercetaşul se străduieşte să facă în fiecare zi o faptă bună, oricât de neînsemnată ar părea ea.
                 </p>
             </section>
             <div id="calendar">
                 <h3>Calendar</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quidem. Voluptate alias omnis, in obcaecati 
+                    Ziua mondială a cercetăşiei este marcată la 22 februarie şi reprezintă ziua de naştere a fondatorului Mişcării "Scout" - cercetaşii, Robert Baden-Powell. În acelaşi timp, reflectă activitatea cercetaşilor, specifică culturii şi ţărilor în care aceştia trăiesc. 
                 </p>
             </div>
             <section id="anunturi">
                 <h3>Anunturi</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quidem. Voluptate alias omnis, in obcaecati recusandae assumenda. Libero incidunt quos debitis laboriosam! Odio vero maxime, quaerat temporibus tenetur pariatur molestias.
+                    Tocmai ce am schimbat aspectul site-ului. Bun venit noului Scoutshop!
                 </p>
             </section>
             <div id="continut">
@@ -202,5 +235,6 @@
             </div>
         </main>
         <%- include("../fragmente/footer.ejs") %>
-    </body>
+        <script src="/resurse/js/cards.js"></script>
+    </body> 
 </html>

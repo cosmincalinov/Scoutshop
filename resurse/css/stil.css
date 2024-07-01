@@ -10,20 +10,17 @@ body{
     padding-bottom: 20px;
     padding-left: var(--dim-spatiere);
     padding-right: var(--dim-spatiere);
-    background-color: var(--culoare-fundal);
+    background-color: var(--culoare-fundal) !important;
     font-family: "Madimi One", sans-serif;
     font-weight: 100;
     font-style: normal;
     --transparent: rgba(0,0,0,0);
-}
-
-body.dark {
-  --culoare-fundal: black;
+    --txtpadding: 5px;
 }
 
 p{
     background-color: var(--culoare-deschisa);
-    padding: 0.2rem 0.5rem;
+    padding: 0.5em 0.5em;
 }
 
 h1{

@@ -131,6 +131,10 @@ html {
     html {
         font-size: 15px;
     }
+    #banner {
+        animation: none;
+        transition: none;
+    }
 
     #grid-pagina {
         display: grid;
@@ -164,6 +168,13 @@ html {
     }
     #tabel {
         overflow-x: scroll;
+    }
+    img {
+        max-width: 250px;
+    }
+    #banner {
+        animation: none;
+        transition: none;
     }
 }
 

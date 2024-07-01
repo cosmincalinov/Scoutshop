@@ -2,38 +2,93 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
+			"fisier":"america.jpg",
+			"descriere":"Esarfa Americana",
 			"luni":["martie","februarie","noiembrie","aprilie"]
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
+			"fisier":"backpack.jpg",
+			"descriere":"Rucsac",
 			"luni":["ianuarie","februarie","iunie"]
 			
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
+			"fisier":"boys.jpg",
+			"descriere":"Baieti",
 			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
+			"fisier":"cam.jpg",
+			"descriere":"Curiozitate",
 			"luni":["noiembrie","aprilie"]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"fisier":"eat.jpg",
+			"descriere":"Mancare",
+			"luni":["iulie"]
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"fisier":"fire.jpg",
+			"descriere":"Foc de tabara",
+			"luni":["iulie"]
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"fisier":"food.jpg",
+			"descriere":"Pranzul",
+			"luni":["iunie"]
+		},
+		{
+			"fisier":"fren.jpg",
+			"descriere":"Prietenie",
+			"luni":["iunie"]
+		},
+		{
+			"fisier":"fun.jpg",
+			"descriere":"Distractie",
+			"luni":["iunie"]
+		},
+		{
+			"fisier":"girls.jpg",
+			"descriere":"Cercetase",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"guy.jpg",
+			"descriere":"Pregatire",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"map.jpg",
+			"descriere":"Descoperiri",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"moto.jpg",
+			"descriere":"Motto",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"pomise.jpg",
+			"descriere":"Promisiune",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"praise.jpg",
+			"descriere":"Natura",
+			"luni":["iulie"]
+		},
+		{
+			"fisier":"stuff.jpg",
+			"descriere":"Accesorii",
+			"luni":["iunie"]
+		},
+		{
+			"fisier":"tent.jpg",
+			"descriere":"Cort"
+		},
+		{
+			"fisier":"think.jpg",
+			"descriere":"Gnadire"
 		}
 	]
 }

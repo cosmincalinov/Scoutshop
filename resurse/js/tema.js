@@ -1,16 +1,29 @@
-let tema=localStorage.getItem("tema");
-    if(tema)
-        document.body.classList.add("dark");
-        
-window.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("schimba_tema").onclick= function(){
-        if(document.body.classList.contains("dark")){
-            document.body.classList.remove("dark")
+window.addEventListener("load", () => {
+    const body = document.body;
+
+    let tema = localStorage.getItem("tema");
+
+    if (tema) body.classList.add(tema);
+    
+    function schimbaTema(temaNoua) {
+        body.classList.remove("dark", "alter");
+        if (temaNoua) {
+            body.classList.add(temaNoua);
+            localStorage.setItem("tema", temaNoua);
+        } else {
             localStorage.removeItem("tema");
         }
-        else{
-            document.body.classList.add("dark")
-            localStorage.setItem("tema","dark");
-        }
     }
+
+    document.getElementById("schimba_tema").addEventListener("click", () => {
+        schimbaTema("dark");
+    });
+
+    document.getElementById("schimba_tema2").addEventListener("click", () => {
+        schimbaTema("alter");
+    });
+
+    document.getElementById("schimba_tema3").addEventListener("click", () => {
+        schimbaTema(null);
+    });
 });

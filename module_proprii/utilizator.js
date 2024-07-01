@@ -10,7 +10,8 @@ class Utilizator{
     static tipConexiune="local";
     static tabel="utilizatori";
     static parolaCriptare="tehniciweb";
-    static emailServer="scoutshop.tweb.node@gmail.com";
+    //static emailServer="scoutshop.tweb.node@gmail.com";
+    static emailServer = "fam.testing.unibucfmi@gmail.com";
     // pswd: cercetasi.web
     static lungimeCod=64;
     static numeDomeniu="localhost:8080";
@@ -98,7 +99,7 @@ class Utilizator{
             secure: false,
             auth:{//date login 
                 user:Utilizator.emailServer,
-                pass:"rwgmgkldxnarxrgu"
+                pass:"slrpwiyrnhnobhsv"
             },
             tls:{
                 rejectUnauthorized:false

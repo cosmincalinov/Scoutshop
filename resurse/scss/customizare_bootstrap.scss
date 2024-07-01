@@ -1,5 +1,31 @@
 @use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
 (
-    $primary: red,
-    $secondary:purple
-)
+    $body-bg: #1a936f,
+    $body-color: #FFFCFF,
+
+    $secondary: black,
+    $primary: #FFD23F,
+    $success: #f7f0f0,
+    $danger: #ff7518,
+
+    $border-radius: 0.5em,
+    $border-width: 1px,
+    $border-color: black,
+
+    $font-family-base: "Lato",
+
+    $font-size-base: 1rem,
+    $h1-font-size: 2.25rem,
+    $h2-font-size: 2rem,
+    $h3-font-size: 1.8rem,
+    $h4-font-size: 1.5rem,
+    $h5-font-size: 1.3rem,
+    $h6-font-size: 1.1rem,
+
+    $spacer: 0,
+
+    $form-floating-height: 1.5rem,
+
+    $form-range-track-bg: white,
+    $form-range-thumb-width: 1.5rem
+);
